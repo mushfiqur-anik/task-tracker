@@ -28,11 +28,18 @@ function App() {
     }
   ])
 
+  // deleteTask function
+  const deleteTask = (id) => { 
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
   // Return ...
   return (
     <div className="container">
       <Header title="Task Tracker"/> 
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? 
+       <Tasks tasks={tasks} onDelete={deleteTask}/>
+       : "No more tasks left"}
     </div>
   );
 }
