@@ -2,8 +2,6 @@ import {useState} from "react"
 import Header from     "./components/Header"
 import Tasks  from     "./components/Tasks"
 
-
-
 function App() {
 
   // Using state to set tasks
@@ -33,12 +31,25 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
+  // toggleReminder function
+  const toggleReminder = (id) => { 
+    setTasks(
+      tasks.map((task) => task.id === id? 
+       {...task, reminder: !task.reminder} : task 
+      )
+    )
+  }
+
   // Return ...
   return (
     <div className="container">
       <Header title="Task Tracker"/> 
       {tasks.length > 0 ? 
-       <Tasks tasks={tasks} onDelete={deleteTask}/>
+       <Tasks
+         tasks={tasks} 
+         onDelete={deleteTask} 
+         onToggle={toggleReminder}
+       />
        : "No more tasks left"}
     </div>
   );
