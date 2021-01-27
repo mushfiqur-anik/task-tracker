@@ -20,7 +20,7 @@ Button.defaultProps = {
     color: 'blue'
 }
 
-// Type checkings
+// Type checking 
 Button.propType = { 
     title: PropTypes.string,
     color: PropTypes.string,
