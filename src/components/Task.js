@@ -1,5 +1,6 @@
 import { FaTimes } from "react-icons/fa"
 
+// Task Component
 const Task = ({task, onDelete, onToggle}) => {
     return (
         <div 

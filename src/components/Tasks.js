@@ -1,5 +1,6 @@
 import Task from "./Task"
 
+// Tasks Component
 const Tasks = ({tasks, onDelete, onToggle}) => {
     return (
         <> 
