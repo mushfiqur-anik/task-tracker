@@ -6,6 +6,7 @@ const AddTask = ({onAdd}) => {
     const [day, setDay] = useState("")
     const [reminder, setReminder] = useState(false)
 
+    // Submit button
     const onSubmit = (e) => { 
         e.preventDefault()
 
@@ -22,7 +23,7 @@ const AddTask = ({onAdd}) => {
     }
 
     return (
-        // form
+        // Form
         <form className="add-form" onSubmit={onSubmit}>
             <div className="form-control">
                 <label> Task </label>
@@ -47,7 +48,6 @@ const AddTask = ({onAdd}) => {
 
             <input type="submit" value="Save Task" className="btn btn-block"/>
         </form>
-        
     )
 }
 
