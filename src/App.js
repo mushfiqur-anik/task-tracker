@@ -26,13 +26,20 @@ function App() {
       reminder: false
     }
   ])
+  
+  // Add new Task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+  }
 
-  // deleteTask function
+  // Delete a task
   const deleteTask = (id) => { 
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
-  // toggleReminder function
+  // Toggle the reminder
   const toggleReminder = (id) => { 
     setTasks(
       tasks.map((task) => task.id === id? 
@@ -45,7 +52,7 @@ function App() {
   return (
     <div className="container">
       <Header title="Task Tracker"/>     
-      <AddTask />
+      <AddTask onAdd={addTask} />
       {tasks.length > 0 ? 
        <Tasks
          tasks={tasks} 
