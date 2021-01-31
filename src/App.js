@@ -5,6 +5,9 @@ import AddTask from    "./components/AddTask"
 
 function App() {
 
+  // Show Add task area 
+  const [showAddTask, setShowAddTask] = useState(false)
+
   // Using state to set tasks
   const [tasks, setTasks] = useState([
     { 
@@ -51,8 +54,10 @@ function App() {
   // Return ...
   return (
     <div className="container">
-      <Header title="Task Tracker"/>     
-      <AddTask onAdd={addTask} />
+      <Header onAdd={() => setShowAddTask(!showAddTask)}
+              showAdd={showAddTask}
+              title="Task Tracker"/>     
+      {showAddTask &&  <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? 
        <Tasks
          tasks={tasks} 
