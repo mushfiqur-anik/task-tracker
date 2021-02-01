@@ -1,21 +1,15 @@
 {
   "tasks": [
-    { 
-      "id":       1,
-      "text":     "Do Laundry",     
-      "day":      "Feb 2nd at 10pm",
-      "reminder": true
-    },
-    { 
-      "id":       2,
-      "text":     "Do Assignment",     
-      "day":      "Feb 3rd at 11pm",
+    {
+      "id": 2,
+      "text": "Do Assignment",
+      "day": "Feb 3rd at 11pm",
       "reminder": true
     },
     {
-      "id":       3,
-      "text":     "Do Exercise",     
-      "day":      "Feb 4th at 12pm",
+      "id": 3,
+      "text": "Do Exercise",
+      "day": "Feb 4th at 12pm",
       "reminder": false
     }
   ]
