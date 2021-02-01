@@ -10,7 +10,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: wheat;
+  color:white;
+  background-color: rgb(26, 84, 99);
 }
 
 .container {
@@ -18,7 +19,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid ghostwhite;
   padding: 30px;
   border-radius: 5px;
 }
@@ -62,6 +63,7 @@ body {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  color:black;
 }
 
 .task.reminder {
