@@ -5,6 +5,12 @@
       "text": "Do Assignment",
       "day": "Feb 3rd at 11pm",
       "reminder": true
+    },
+    {
+      "text": "Yoga",
+      "day": "Saturday at 2pm",
+      "reminder": true,
+      "id": 3
     }
   ]
 }

@@ -4,11 +4,9 @@ import Tasks  from     "./components/Tasks"
 import AddTask from    "./components/AddTask"
 
 function App() {
-  // Show Add task area 
-  const [showAddTask, setShowAddTask] = useState(false)
+  const [showAddTask, setShowAddTask] = useState(false)   // Show Add task area 
 
-  // Using state to set tasks
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([])   // Using state to set tasks
 
   useEffect(() => {
     const getTasks = async() => {
@@ -28,6 +26,15 @@ function App() {
     return data
   }
 
+  // Fetch task with the specific id
+  const fetchTask = async (id) => {
+    const res = await fetch(`http://localhost:5000/tasks${id}`)
+    const data = await res.json()
+
+    console.log(data)
+    return data
+  }
+
   // Add new Task
   const addTask = async (task) => {
     const res = await fetch("http://localhost:5000/tasks",
@@ -37,7 +44,7 @@ function App() {
                       })
     
     const data = await res.json() 
-    
+
     setTasks([...tasks, data])
   }
 
@@ -50,7 +57,10 @@ function App() {
   }
 
   // Toggle the reminder
-  const toggleReminder = (id) => { 
+  const toggleReminder = async (id) => { 
+    const taskToToggle = await fetchTask(id)
+    const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder}
+
     setTasks(
       tasks.map((task) => task.id === id? 
        {...task, reminder: !task.reminder} : task 
